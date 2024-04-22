@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:fragment="headerfiles">
+  <meta charset="UTF-8" />
+  <link th:href="@{/css/main-style.css}" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="header" class="logout" sec:authorize="isAuthenticated()">
+  Logged in user: <span sec:authentication="name"></span> |
+  Roles: <span sec:authentication="principal.authorities"></span>
+  <div>
+    <form action="#" th:action="@{/logout}" method="post">
+      <input type="submit" value="Logout" />
+    </form>
+  </div>
+</div>
+
+<footer th:fragment="footer">
+<div> this is a footer</div>
+</footer>
+</body>
+</html>
