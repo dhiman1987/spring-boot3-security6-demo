@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="/css/main-style.css">
+    <link rel="stylesheet" th:href="@{/css/main-style.css}" href="../static/css/main-style.css">
 </head>
 <body>
 <h1>Home</h1>
 <header th:insert="common.html :: header"> </header>
-<div>
-    <h3>Server Message</h3>
-    <span th:text="${message}"></span>
+<div class="info-message">
+    <strong>Server Message</strong>
+    <span th:text="${message}">this is a server message</span>
 </div>
 <footer th:replace="common.html :: footer"></footer>
 </body>
